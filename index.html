@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="css/all.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -16,265 +20,555 @@
 </head>
 
 <body>
-    <!-- <header>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h5 class="text-white h4">Collapsed content</h5>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-            </div>
+    <!-- Header -->
+    <header class="container-fluid navbar sticky-top flex-md-nowrap">
+        <div class="col-md-6 col-12">
+            <!-- Sidebar Toggler for Small Devices -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="sidebar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <!-- Company Name -->
+            <a class="navbar-brand me-0" href="#">
+                <h1>Lorem Industries</h1>
+            </a>
+            <!-- Header Menu Toggler -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="headerMenu-toggler-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-    </header> -->
-    <header class="navbar sticky-top flex-md-nowrap p-0">
-        <a class="navbar-brand col-md-3 me-0 px-3" href="#">Lorem Industries</a>
-        <button class="navbar-toggler position-absolute d-md-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-        <ul class="nav col-md px-3">
+        <!-- Header Menu -->
+        <ul class="nav headerMenu col justify-content-md-end justify-content-center align-items-center d-md-flex collapse"
+            id="headerMenu">
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-sliders-h"></i></a>
+                <a class="nav-link" href="#"><i class="fas fa-sliders-h rotate-90"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="far fa-bell"></i></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="far fa-user"></i></a>
+            <li class="nav-item text-nowrap">
+                <a class="nav-link current-user py-1" href="#">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <div class="col">
+                            <p>John Doe</p>
+                            <small>Administrator</small>
+                        </div>
+                    </div>
+                </a>
             </li>
         </ul>
     </header>
-    <!-- Main Body Starts -->
-    <!-- <section class="main-body"> -->
-    <!-- Side Nav Starts -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Employee Tab Starts -->
-            <div id="employee">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                            role="tab" aria-controls="home" aria-selected="false"><i class="fas fa-filter"></i></button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="emp1001-tab" data-bs-toggle="tab" data-bs-target="#emp1001"
-                            type="button" role="tab" aria-controls="emp1001" aria-selected="true">EMP-1001</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="emp1002-tab" data-bs-toggle="tab" data-bs-target="#emp1002"
-                            type="button" role="tab" aria-controls="emp1002" aria-selected="false">EMP-1002</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">home</div>
-                    <div class="tab-pane fade show active" id="emp1001" role="tabpanel" aria-labelledby="emp1001-tab">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <h1>Employee 1001</h1>
-                            </div>
-                            <div class="row">
-                                <nav id="sidebarMenu"
-                                    class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse show" style="">
-                                    <div class="position-sticky pt-3">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" aria-current="page" href="#">Personal
-                                                    Information</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#documents">Documents</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Benefits</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Attendance & Leave</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#payroll">Payroll</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Bonus</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </nav>
-                                <!-- Start -->
-                                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                                    <!-- Employee Tab Starts -->
-                                    <div id="employee">
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="payroll-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#payroll" type="button" role="tab" aria-controls="payroll"
-                                                    aria-selected="true"><i class="fas fa-filter"></i></button>
-                                            </li>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="employee1001-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#employee1001" type="button" role="tab"
-                                                    aria-controls="employee1001" aria-selected="false">EMP-1001</button>
-                                            </li>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="employee1002-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#employee1002" type="button" role="tab"
-                                                    aria-controls="employee1002" aria-selected="false">EMP-1002</button>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="payroll" role="tabpanel"
-                                                aria-labelledby="payroll-tab">
 
-                                                            <!-- Document Tab Starts -->
-                                                            <div id="documents">
-                                                                <h4>Documents</h4>
-                                                            </div>
-                                                            <!-- Document Tab Ends -->
-                                                            <!-- Payroll Tab Starts -->
-                                                            <div id="payroll">
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped table-sm">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th></th>
-                                                                                <th></th>
-                                                                                <th>Name<br>Designation</th>
-                                                                                <th>Phone<br>Email</th>
-                                                                                <th>Net Salary<br>(last 6 months)</th>
-                                                                                <th></th>
-                                                                                <th></th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>1,001</td>
-                                                                                <td><i class="fas fa-circle"></i></td>
-                                                                                <td>Iqbal Ahmed Faruq Hasan<br>Md &
-                                                                                    Chief Executive Officer</td>
-                                                                                <td>01010101011<br>demo@gmail.com</td>
-                                                                                <td><i class="fas fa-chart-bar"></i>
-                                                                                    BDT<br>70000</td>
-                                                                                <td><i class="far fa-edit"></i><i
-                                                                                        class="fas fa-arrow-right"></i>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>1,001</td>
-                                                                                <td><i class="fas fa-circle"></i></td>
-                                                                                <td>Iqbal Ahmed Faruq Hasan<br>Md &
-                                                                                    Chief Executive Officer</td>
-                                                                                <td>01010101011<br>demo@gmail.com</td>
-                                                                                <td><i class="fas fa-chart-bar"></i>
-                                                                                    BDT<br>70000</td>
-                                                                                <td><i class="far fa-edit"></i><i
-                                                                                        class="fas fa-arrow-right"></i>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>1,001</td>
-                                                                                <td><i class="fas fa-circle"></i></td>
-                                                                                <td>Iqbal Ahmed Faruq Hasan<br>Md &
-                                                                                    Chief Executive Officer</td>
-                                                                                <td>01010101011<br>demo@gmail.com</td>
-                                                                                <td><i class="fas fa-chart-bar"></i>
-                                                                                    BDT<br>70000</td>
-                                                                                <td><i class="far fa-edit"></i><i
-                                                                                        class="fas fa-arrow-right"></i>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div>
-                                                            <!-- Payroll Tab Ends -->
-                                          
-                                            </div>
-                                            <div class="tab-pane fade" id="employee1001" role="tabpanel"
-                                                aria-labelledby="employee1001-tab">
-<h3>Employee 1001</h3>
-                                            </div>
-                                            <div class="tab-pane fade" id="employee1002" role="tabpanel"
-                                                aria-labelledby="employee1002-tab">
-                                                <h3>Employee 1002</h3>
-                                            </div>
-                                        </div>
+    <section class="container-fluid body-section">
+        <!-- Profile Tabs Start -->
+        <!-- Profile Tab List Starts-->
+        <div>
+            <ul class="nav nav-tabs" id="profile-tab" role="tablist">
+                <!-- ProfileTab Title Tab -->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link disabled" id="profile-title-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile-title" type="button" role="tab" aria-controls="profile-title"
+                        aria-selected="false" tabindex="-1" aria-disabled="true">Employees</button>
+                </li>
+                <!-- ProfileTab Actions Tab-->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link h-100 w-100" id="profile-action-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile-action" type="button" role="tab" aria-controls="profile-action"
+                        aria-selected="false">
+                    </button>
+                    <ul class="nav tab-action align-items-center">
+                        <li><a href=# class="p-2"><i class="fas fa-filter"></i></a></li>
+                        <li><a href="#" class="p-2">All</a></li>
+                        <li><a href="#" class="p-2">Active</a></li>
+                        <li><a href="#" class="p-2">New</a></li>
+                        <li>
+                            <input type="text" placeholder="Search" class="p-2">
+                        </li>
+                        <li><a href="#" class="p-2"><i class="fas fa-chevron-down"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- ProfileTab EMP-1001 Tab -->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="profile-emp1001-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile-emp1001" type="button" role="tab" aria-controls="profile-emp1001"
+                        aria-selected="true">EMP-1001</button>
+                </li>
+                <!-- ProfileTab EMP-1002 Tab -->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-emp1002-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile-emp1002" type="button" role="tab" aria-controls="profile-emp1002"
+                        aria-selected="false">EMP-1002</button>
+                </li>
+                <li class="nav-item ms-auto new-btn">
+                    <button class="nav-link" type="button"><span class="me-2"><i class="fas fa-plus"></i></span>
+                        <b>New</b> <span class="ms-2"><i class="fas fa-ellipsis-v"></i></span></button>
+                </li>
+            </ul>
+        </div>
+        <!-- Profile Tab List Ends-->
+        <!-- Profile Tab Content Starts -->
+        <div class="tab-content" id="profile-tabContent">
+            <!-- ProfileTab Actions Tab Contents -->
+            <div class="tab-pane fade" id="profile-action" role="tabpanel" aria-labelledby="profile-action-tab">
+                <h3>EMP Profile Actions</h3>
+            </div>
+            <!-- ProfileTab EMP-1001 Tab Contents -->
+            <div class="tab-pane fade show active" id="profile-emp1001" role="tabpanel"
+                aria-labelledby="profile-emp1001-tab">
+                <!-- Inner Section Starts -->
+                <div class="container-fluid inner-section">
+                    <!-- Title Row -->
+                    <div class="row py-3">
+                        <!-- Employee Image -->
+                        <div class="col-md-2 col-12 text-center">
+                            <!-- <div class="emp-imagesss"> -->
+                            <img src="images/user.png" class="emp-image img-fluid" alt="Profile Image of Employee">
+                            <!-- </div> -->
+                        </div>
+                        <!-- Employee Information Starts-->
+                        <div class="col-md">
+                            <div class="emp-info">
+                                <!-- Employee Information Row 1 -->
+                                <div class="row align-items-center">
+                                    <div class="col-md-3">
+                                        <!-- Employee Name -->
+                                        <h2>John Doe</h2>
                                     </div>
-                                    <!-- Employee Tab Ends -->
-                                </main>
+                                    <div class="col-md">
+                                        <!-- Employee Actions -->
+                                        <ul class="nav top-action justify-content-end align-items-center">
+                                            <li><button class="btn"><i class="fas fa-download"></i></button></li>
+                                            <li><button class="btn"><i class="fas fa-square"></i></button></li>
+                                            <li><button class="btn"><i class="fas fa-sliders-h rotate-90"></i></button>
+                                            </li>
+                                            <li><button class="btn"><i class="fas fa-square"></i></button></li>
+                                            <li><button class="btn">1 of 150 <span class="m-4"><i
+                                                            class="fas fa-chevron-left"></i></span><span><i
+                                                            class="fas fa-chevron-right"></i></span></i></button></li>
+                                            <li><button class="btn"><i class="fas fa-square"></i></button></li>
+                                            <li><button class="btn">1-50<br>of 7045</button></li>
+                                            <li><button class="btn"><i class="fas fa-square"></i></button></li>
+                                            <li><button class="btn">50 <span><i
+                                                            class="fas fa-chevron-down"></i></span><br>entries</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Border -->
+                                <hr class="mt-0 mb-2">
+                                <!-- Employee Information Row 2 -->
+                                <div class="row">
+                                    <!-- ******************** -->
+                                    <div class="col-md-2 pe-0">
+                                        <p>CODE</p>
+                                        <h4>EMP-1001</h4>
+                                    </div>
+                                    <!-- ******************** -->
+                                    <div class="col-md-2 pe-0">
+                                        <p>DEPARTMENT</p>
+                                        <h4>Engineering</h4>
+                                    </div>
+                                    <!-- ******************** -->
+                                    <div class="col-md pe-0">
+                                        <p>DESIGNATION</p>
+                                        <h4>Chief Technical Officer</h4>
+                                    </div>
+                                    <!-- ******************** -->
+                                    <div class="col-md pe-0">
+                                        <p>REPORTNG TO</p>
+                                        <h4>John Doe John</h4>
+                                    </div>
+                                    <!-- ******************** -->
+                                    <div class="col-md">
+                                        <p>REPORTNG TO</p>
+                                        <h4>John John Doe</h4>
+                                    </div>
+                                    <!-- ******************** -->
+                                </div>
+
                             </div>
                         </div>
+                        <!-- Employee Information Ends-->
                     </div>
-                    <div class="tab-pane fade" id="emp1002" role="tabpanel" aria-labelledby="emp1002-tab">emp2</div>
+                    <!-- Details Row -->
+                    <div class="row">
+                        <!-- Sidebar Nav Starts -->
+                        <nav id="sidebarMenu" class="sidebar col-md-3 col-lg-2 d-md-block p-0 collapse">
+
+                            <!-- <div class="d-flex align-items-start"> -->
+                            <!-- Sidebar Tabs Start -->
+                            <div class="nav flex-column nav-pills" id="sidebar-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <!-- Sidebar Info Tab -->
+                                <button class="nav-link" id="sidebar-info-tab" data-bs-toggle="pill"
+                                    data-bs-target="#sidebar-info" type="button" role="tab" aria-controls="sidebar-info"
+                                    aria-selected="false">Personal Information</button>
+                                <!-- Sidebar Document Tab -->
+                                <button class="nav-link" id="sidebar-document-tab" data-bs-toggle="pill"
+                                    data-bs-target="#sidebar-document" type="button" role="tab"
+                                    aria-controls="sidebar-document" aria-selected="false">Documents</button>
+                                <!-- Sidebar Benefit Tab -->
+                                <button class="nav-link" id="sidebar-benefit-tab" data-bs-toggle="pill"
+                                    data-bs-target="#sidebar-benefit" type="button" role="tab"
+                                    aria-controls="sidebar-benefit" aria-selected="false">Benefits</button>
+                                <!-- Sidebar Attendance Tab -->
+                                <button class="nav-link" id="sidebar-attendance-tab" data-bs-toggle="pill"
+                                    data-bs-target="#sidebar-attendance" type="button" role="tab"
+                                    aria-controls="sidebar-attendance" aria-selected="false">Attendance & Leave</button>
+                                <!-- Sidebar Payroll Tab -->
+                                <button class="nav-link active" id="sidebar-payroll-tab" data-bs-toggle="pill"
+                                    data-bs-target="#sidebar-payroll" type="button" role="tab"
+                                    aria-controls="sidebar-payroll" aria-selected="true">Payroll</button>
+                                <!-- Sidebar Bonus Tab -->
+                                <button class="nav-link" id="sidebar-bonus-tab" data-bs-toggle="pill"
+                                    data-bs-target="#sidebar-bonus" type="button" role="tab"
+                                    aria-controls="sidebar-bonus" aria-selected="false">Bonus</button>
+                            </div>
+                            <!-- Sidebar Tabs End -->
+                        </nav>
+                        <!-- Sidebar Nav Ends -->
+                        <!-- Body Part for Sidebar Nav Starts -->
+                        <main class="col-md-9 ms-sm-auto col-lg-10 p-0">
+                            <!-- Sidebar Nav Contents Start -->
+                            <div class="tab-content px-3" id="sidebar-tabContent">
+                                <!-- Sidebar Info Tab Contents-->
+                                <div class="tab-pane fade" id="sidebar-info" role="tabpanel"
+                                    aria-labelledby="sidebar-info-tab">
+                                    <h2>Personal Information</h2>
+                                </div>
+                                <!-- Sidebar Document Tab Contents-->
+                                <div class="tab-pane fade" id="sidebar-document" role="tabpanel"
+                                    aria-labelledby="sidebar-document-tab">
+                                    <h2>Documents</h2>
+                                </div>
+                                <!-- Sidebar Benefits Tab Contents-->
+                                <div class="tab-pane fade" id="sidebar-benefit" role="tabpanel"
+                                    aria-labelledby="sidebar-benefit-tab">
+                                    <h2>Benefits</h2>
+                                </div>
+                                <!-- Sidebar Attendance Tab Contents-->
+                                <div class="tab-pane fade" id="sidebar-attendance" role="tabpanel"
+                                    aria-labelledby="sidebar-attendance-tab">
+                                    <h2>Attendance & Leave</h2>
+                                </div>
+                                <!-- Sidebar Payroll Tab Contents-->
+                                <div class="tab-pane fade show active" id="sidebar-payroll" role="tabpanel"
+                                    aria-labelledby="sidebar-payroll-tab">
+                                    <!-- Payroll Tabs Start -->
+                                    <!-- Payroll Tab List Starts-->
+                                    <div>
+                                        <ul class="nav nav-tabs" id="payroll-tab" role="tablist">
+                                            <!-- PayrollTab Title Tab -->
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link disabled" id="payroll-title-tab"
+                                                    data-bs-toggle="tab" data-bs-target="#payroll-title" type="button"
+                                                    role="tab" aria-controls="payroll-title" aria-selected="false"
+                                                    tabindex="-1" aria-disabled="true">Employees</button>
+                                            </li>
+                                            <!-- PayrollTab Actions Tab-->
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active h-100 w-100" id="payroll-action-tab"
+                                                    data-bs-toggle="tab" data-bs-target="#payroll-action" type="button"
+                                                    role="tab" aria-controls="payroll-action" aria-selected="true">
+                                                </button>
+                                                <ul class="nav tab-action align-items-center">
+                                                    <li><a href=# class="p-2"><i class="fas fa-filter"></i></a></li>
+                                                    <li><a href="#" class="p-2">All</a></li>
+                                                    <li><a href="#" class="p-2">Active</a></li>
+                                                    <li><a href="#" class="p-2">New</a></li>
+                                                    <li>
+                                                        <input type="text" placeholder="Search" class="p-2">
+                                                    </li>
+                                                    <li><a href="#" class="p-2"><i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <!-- PayrollTab EMP-1001 Tab -->
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="payroll-emp1001-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#payroll-emp1001" type="button" role="tab"
+                                                    aria-controls="payroll-emp1001"
+                                                    aria-selected="false">EMP-1001</button>
+                                            </li class="nav-item" role="presentation">
+                                            <!-- PayrollTab EMP-1002 Tab -->
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="payroll-emp1002-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#payroll-emp1002" type="button" role="tab"
+                                                    aria-controls="payroll-emp1002"
+                                                    aria-selected="false">EMP-1002</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Payroll Tab List Ends-->
+                                    <!-- Payroll Tab Content Starts -->
+                                    <div class="tab-content" id="payroll-tabContent">
+                                        <!-- PayrollTab Actions Tab Contents -->
+                                        <div class="tab-pane fade show active" id="payroll-action" role="tabpanel"
+                                            aria-labelledby="payroll-action-tab">
+                                            <!-- Payroll Table Starts -->
+                                            <div class="table-responsive">
+                                                <table class="table table-striped align-middle">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="7">
+                                                                <ul
+                                                                    class="nav top-action justify-content-around align-items-center">
+                                                                    <li class="nav"><input type="checkbox" class="me-3"
+                                                                            id="btncheck1" autocomplete="off">
+                                                                        <label for="btncheck1">2 items
+                                                                            selected</label></li>
+                                                                    <li><button class="btn"><i
+                                                                                class="far fa-check-circle"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-ban"></i></button></li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-lock"></i></button></li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-lock-open"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="far fa-trash-alt"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-ellipsis-v"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-download"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-square"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-sliders-h"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-square"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn">1 of 150 <span class="m-4"><i
+                                                                                    class="fas fa-chevron-left"></i></span><span><i
+                                                                                    class="fas fa-chevron-right"></i></span></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-square"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn">1-50<br>of 7045</button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-square"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn">50 <span><i
+                                                                                    class="fas fa-chevron-down"></i></span><br>entries</button>
+                                                                    </li>
+                                                                </ul>
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="border-1"></th>
+                                                            <th class="border-1"></th>
+                                                            <th class="border-1">Name<br>Designation</th>
+                                                            <th class="border-1">Phone<br>Email</th>
+                                                            <th class="border-1">Net Salary<br>(last 6 months)</th>
+                                                            <th class="border-1 th-bg"></th>
+                                                            <th class="border-1"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row"><input type="checkbox" id="btncheck1"
+                                                                    autocomplete="off"></th>
+                                                            <td><span><i class="fas fa-circle"></i></span></td>
+                                                            <td>
+                                                                <h6>John Doe</h6>
+                                                                <p>Md & Chief Executive Officer</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>+8801020190201</p>
+                                                                <small>john@lorem.org</small>
+                                                            </td>
+                                                            <td>
+                                                                <ul class="nav align-items-center">
+                                                                    <li><span class="me-2"><i class="fas fa-signal"></i></span></li>
+                                                                    <li><p>BDT<br>70000</p></li>
+                                                                </ul>
+                                                                
+                                                                
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <ul class="nav row-action">
+                                                                    <li><button class="btn"><i class="far fa-edit"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-arrow-right"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row"><input type="checkbox" id="btncheck1"
+                                                                    autocomplete="off"></th>
+                                                            <td><span><i class="fas fa-circle"></i></span></td>
+                                                            <td>
+                                                                <h6>John Doe</h6>
+                                                                <p>Md & Chief Executive Officer</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>+8801020190201</p>
+                                                                <small>john@lorem.org</small>
+                                                            </td>
+                                                            <td>
+                                                                <ul class="nav align-items-center">
+                                                                    <li><span class="me-2"><i class="fas fa-signal"></i></span></li>
+                                                                    <li><p>BDT<br>70000</p></li>
+                                                                </ul>
+                                                                
+                                                                
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <ul class="nav row-action">
+                                                                    <li><button class="btn"><i class="far fa-edit"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-arrow-right"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row"><input type="checkbox" id="btncheck1"
+                                                                    autocomplete="off"></th>
+                                                            <td><span><i class="fas fa-circle"></i></span></td>
+                                                            <td>
+                                                                <h6>John Doe</h6>
+                                                                <p>Md & Chief Executive Officer</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>+8801020190201</p>
+                                                                <small>john@lorem.org</small>
+                                                            </td>
+                                                            <td>
+                                                                <ul class="nav align-items-center">
+                                                                    <li><span class="me-2"><i class="fas fa-signal"></i></span></li>
+                                                                    <li><p>BDT<br>70000</p></li>
+                                                                </ul>
+                                                                
+                                                                
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <ul class="nav row-action">
+                                                                    <li><button class="btn"><i class="far fa-edit"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-arrow-right"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row"><input type="checkbox" id="btncheck1"
+                                                                    autocomplete="off"></th>
+                                                            <td><span><i class="fas fa-circle"></i></span></td>
+                                                            <td>
+                                                                <h6>John Doe</h6>
+                                                                <p>Md & Chief Executive Officer</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>+8801020190201</p>
+                                                                <small>john@lorem.org</small>
+                                                            </td>
+                                                            <td>
+                                                                <ul class="nav align-items-center">
+                                                                    <li><span class="me-2"><i class="fas fa-signal"></i></span></li>
+                                                                    <li><p>BDT<br>70000</p></li>
+                                                                </ul>
+                                                                
+                                                                
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <ul class="nav row-action">
+                                                                    <li><button class="btn"><i class="far fa-edit"></i></button>
+                                                                    </li>
+                                                                    <li><button class="btn"><i
+                                                                                class="fas fa-arrow-right"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!-- Payroll Table Ends -->
+                                        </div>
+                                        <!-- PayrollTab EMP-1001 Tab Contents -->
+                                        <div class="tab-pane fade" id="payroll-emp1001" role="tabpanel"
+                                            aria-labelledby="payroll-emp1001-tab">
+                                            <h3>EMP 1001 Profile</h3>
+                                        </div>
+                                        <!-- PayrollTab EMP-1002 Tab Contents -->
+                                        <div class="tab-pane fade" id="payroll-emp1002" role="tabpanel"
+                                            aria-labelledby="payroll-emp1002-tab">
+                                            <h3>EMP 1002 Profile</h3>
+                                        </div>
+                                    </div>
+                                    <!-- Payroll Tab Content Ends -->
+                                    <!-- Payroll Tabs End -->
+                                </div>
+                                <!-- Sidebar Bonus Tab Contents-->
+                                <div class="tab-pane fade" id="sidebar-bonus" role="tabpanel"
+                                    aria-labelledby="sidebar-bonus-tab">
+                                    <h2>Bonus</h2>
+                                </div>
+                            </div>
+                            <!-- Sidebar Nav Contents End -->
+                        </main>
+                        <!-- Body Part for Sidebar Nav Ends -->
+                    </div>
                 </div>
+                <!-- Inner Section Ends -->
             </div>
-            <!-- Employee Tab Ends -->
+            <!-- ProfileTab EMP-1002 Tab Contents -->
+            <div class="tab-pane fade" id="profile-emp1002" role="tabpanel" aria-labelledby="profile-emp1002-tab">
+                <h3>EMP 1002 Profile</h3>
+            </div>
         </div>
-    </div>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav> -->
-    <!-- Side Nav Ends -->
-    <!-- Tab Starts -->
-
-    <!-- </section> -->
-    <!-- Main Body Ends -->
-
+        <!-- Profile Tab Content Ends -->
+        <!-- Profile Tabs End -->
+    </section>
+    <!-- Footer -->
     <footer>
-
+        <div class="p-3">
+            <ul class="nav">
+                <li>Copyright 2021, Lorem Ipsum</li>
+                <li class="ms-auto"><a href="#">Help</a></li>
+                <li><span><i class="fas fa-map-marker-alt"></i></span>Bangladesh</li>
+                <li>10.55 <sup>PM</sup></li>
+            </ul>
+        </div>
     </footer>
 
+    <!-- <i class="fas fa-bars"></i>
+    <i class="fas fa-filter"></i>
     <i class="far fa-calendar-alt"></i>
     <i class="far fa-user"></i>
     <i class="far fa-bell"></i>
-    <i class="fas fa-chevron-up"></i>
     <i class="fas fa-chevron-down"></i>
+    <i class="fas fa-chevron-up"></i>
     <i class="fas fa-chevron-left"></i>
     <i class="fas fa-chevron-right"></i>
-    <i class="fas fa-filter"></i>
     <i class="fas fa-ellipsis-v"></i>
     <i class="fas fa-arrow-right"></i>
     <i class="far fa-check-circle"></i>
@@ -288,7 +582,7 @@
     <i class="fas fa-plus"></i>
     <i class="fas fa-chart-bar"></i>
     <i class="fas fa-map-marker-alt"></i>
-    <i class="fas fa-sliders-h"></i>
+    <i class="fas fa-sliders-h"></i> -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
